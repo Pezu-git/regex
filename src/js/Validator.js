@@ -6,7 +6,7 @@ export default class Validator {
 
   // eslint-disable-next-line class-methods-use-this
   validateUsername(value) {
-    if (/^[A-Za-z]+[\w-]+[\w]$/.test(value) && !/[\d]{4,}/.test(value)) {
+    if (/[a-z]([\w-]*[a-z])?$/i.test(value) && !/[\d]{4}/.test(value)) {
       return true;
     }
     throw new Error('Не подходящее имя');

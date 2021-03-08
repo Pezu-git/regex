@@ -21,6 +21,15 @@ test('second_invalidname test', () => {
     new Validator(testname);
   }
   expect(() => {
-    regexTest('999etology-2021_tesT');
+    regexTest('999etology-2021_tesT111');
+  }).toThrow('Не подходящее имя');
+});
+test('third_invalidname test', () => {
+  function regexTest(testname) {
+    // eslint-disable-next-line no-new
+    new Validator(testname);
+  }
+  expect(() => {
+    regexTest('netology-2021_tesT111');
   }).toThrow('Не подходящее имя');
 });
